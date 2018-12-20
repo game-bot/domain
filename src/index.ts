@@ -3,7 +3,7 @@ export * from './entities';
 export * from './utils';
 
 export {
-    Repository,
+    IRepository as Repository,
     RepositoryAccessOptions,
     RepositoryUpdateData,
 } from './repository';
@@ -17,7 +17,7 @@ export {
 } from './base-repository';
 
 export {
-    EntityValidator,
+    IEntityValidator as EntityValidator,
     EntityValidatorOptions,
     JoiEntityValidator,
 } from './entity-validator';

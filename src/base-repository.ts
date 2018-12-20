@@ -1,9 +1,9 @@
-import { BaseEntity, BaseEntityId } from "./entities";
-import { Repository, RepositoryUpdateData, RepositoryAccessOptions } from "./repository";
-import { EntityValidator } from "./entity-validator";
+import { IBaseEntity, BaseEntityId } from "./entities";
+import { IRepository, RepositoryUpdateData, RepositoryAccessOptions } from "./repository";
+import { IEntityValidator } from "./entity-validator";
 
-export abstract class BaseRepository<T extends BaseEntity> implements Repository<T> {
-    constructor(protected validator: EntityValidator<T>) { }
+export abstract class BaseRepository<T extends IBaseEntity> implements IRepository<T> {
+    constructor(protected validator: IEntityValidator<T>) { }
 
     async create(data: T) {
         data = this.beforeCreate(data);

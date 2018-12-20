@@ -1,9 +1,9 @@
-export interface Dictionary<V> {
+export interface IDictionary<V> {
     [key: string]: V
 }
 
 export type BaseEntityId = string;
 
-export interface BaseEntity {
+export interface IBaseEntity {
     id: BaseEntityId
 }

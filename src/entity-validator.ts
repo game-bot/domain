@@ -1,8 +1,8 @@
-import { BaseEntity } from "./entities";
+import { IBaseEntity } from "./entities";
 import { RepositoryUpdateData } from "./repository";
 import { validate as joiSchemaValidate, SchemaLike } from 'joi';
 
-export interface EntityValidator<T extends BaseEntity> {
+export interface IEntityValidator<T extends IBaseEntity> {
     onCreate(data: T): T
     onUpdate(data: RepositoryUpdateData<T>): RepositoryUpdateData<T>
 }
@@ -12,7 +12,7 @@ export interface EntityValidatorOptions {
     updateSchema: any
 }
 
-export class JoiEntityValidator<T extends BaseEntity> implements EntityValidator<T> {
+export class JoiEntityValidator<T extends IBaseEntity> implements IEntityValidator<T> {
     constructor(private options: EntityValidatorOptions) { }
 
     onCreate(data: T) {

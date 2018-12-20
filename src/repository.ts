@@ -1,14 +1,14 @@
-import { BaseEntity, BaseEntityId } from "./entities";
+import { IBaseEntity, BaseEntityId } from "./entities";
 
 
-export interface RepositoryAccessOptions<T extends BaseEntity> {
+export interface RepositoryAccessOptions<T extends IBaseEntity> {
     /**
      * Entity fields to return
      */
     fields?: (keyof T)[]
 }
 
-export interface RepositoryUpdateData<T extends BaseEntity> {
+export interface RepositoryUpdateData<T extends IBaseEntity> {
     /**
      * Entity id to updated
      */
@@ -23,7 +23,7 @@ export interface RepositoryUpdateData<T extends BaseEntity> {
     delete?: (keyof T)[]
 }
 
-export interface Repository<T extends BaseEntity> {
+export interface IRepository<T extends IBaseEntity> {
     /**
      * Delete an entity by id.
      * @param id Entity id to be deleted
