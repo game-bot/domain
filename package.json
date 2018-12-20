@@ -1,0 +1,46 @@
+{
+  "name": "@gamebot/domain",
+  "version": "0.1.0",
+  "description": "gamebot code module",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "pretest": "npm run clean && npm run tsc",
+    "test": "ava --no-cache --verbose lib/**/*.test.js",
+    "posttest": "npm run clean-test-code",
+    "tsc": "tsc",
+    "tscw": "tsc -w",
+    "preversion": "npm run tsc",
+    "postversion": "git push --follow-tags",
+    "prepublishOnly": "npm run tsc && npm run clean-test-code",
+    "clean": "rimraf ./lib",
+    "clean-test-code": "rimraf ./lib/**/*.test.js"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/game-bot/domain.git"
+  },
+  "keywords": [
+    "domain",
+    "gamebot"
+  ],
+  "author": "Dumitru Cantea",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/game-bot/domain/issues"
+  },
+  "homepage": "https://github.com/game-bot/domain#readme",
+  "devDependencies": {
+    "@types/joi": "^14.0.1",
+    "@types/node": "10.12.18",
+    "ava": "^1.0.1",
+    "rimraf": "^2.6.2",
+    "typescript": "3.2.2"
+  },
+  "dependencies": {
+    "joi": "^14.3.0"
+  }
+}
